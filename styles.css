@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 2rem;
+}
+.content-container {
+  opacity: 0;
+  transform: translateY(300px);
+  transition: opacity 1.3s ease, transform 1.3s ease;
+}
+.content-container.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.content-container-two{
+  opacity: 0;
+  transform: translateY(300px);
+  transition: opacity 2s ease, transform 2s ease;
+}
+.content-container-two.active {
+  opacity: 1;
+  transform: translateY(50px);
+}
+#section1 { background-color: #f2f2f2; }
+#section2 { background-color: #e0e0e0; }
+#section3 { background-color: #d2d2d2; }
+#section4 { background-color: #c0c0c0; }
+
+
+
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu-toggle.active {
+  transform: rotate(45deg);
+}
+
+.bar {
+  display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    background-color: #000;
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active .bar:nth-child(1) {
+  transform: translateY(12px) rotate(90deg);
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+  transform: translateY(-14px) rotate(-180deg);
+}
+
+
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: -30rem;
+  width: 30rem;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.menu.active {
+  right: 0;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 20px;
+}
+
+.menu ul li {
+  margin: 3rem 0;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 2rem;
+  transition: color 0.3s, transform 0.3s;
+
+}
+
+.menu ul li a:hover {
+  color: #f39c12;
+  transform: translateX(10px);
+}
